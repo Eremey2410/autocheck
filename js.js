@@ -120,28 +120,145 @@
 // console.log(getProductPrice('Grip'));
 
 // ===========mod-3=====19/41==================
-const products = [
-  { name: 'Radar', price: 1300, quantity: 4 },
-  { name: 'Scanner', price: 2700, quantity: 3 },
-  { name: 'Droid', price: 400, quantity: 7 },
-  { name: 'Grip', price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: 'Radar', price: 1300, quantity: 4 },
+//   { name: 'Scanner', price: 2700, quantity: 3 },
+//   { name: 'Droid', price: 400, quantity: 7 },
+//   { name: 'Grip', price: 1200, quantity: 9 },
+// ];
 
-function getAllPropValues(propName) {
-  // Change code below this line
-  let result = [];
-  for (const product of products) {
-    if ('name' === propName) {
-      result.push(product.name);
-    } else if ('quantity' === propName) {
-      result.push(product.quantity);
-    } else if ('price' === propName) {
-      result.push(product.price);
+// function getAllPropValues(propName) {
+// // решение 1
+
+// // Change code below this line
+
+// //   let result = [];
+// //   for (const product of products) {
+// //     if ('name' === propName) {
+// //       result.push(product.name);
+// //     } else if ('quantity' === propName) {
+// //       result.push(product.quantity);
+// //     } else if ('price' === propName) {
+// //       result.push(product.price);
+// //     }
+// //   }
+// //   return result;
+// // }
+
+// // Change code above this line
+
+// // решение 2
+// // Change code below this line
+//   let result = [];
+//   for (const product of products) {
+//     switch (propName) {
+//       case 'name':
+//         result.push(product.name);
+//         break;
+
+//       case 'price':
+//         result.push(product.price);
+//         break;
+
+//       case 'quantity':
+//         result.push(product.quantity);
+//         break;
+//     }
+//   }
+//   return result;
+// }
+// // Change code above this line
+// console.log(getAllPropValues('name'));
+
+// ===========mod-3=====20/41==================
+
+// const products = [
+//   { name: 'Radar', price: 1300, quantity: 4 },
+//   { name: 'Scanner', price: 2700, quantity: 3 },
+//   { name: 'Droid', price: 400, quantity: 7 },
+//   { name: 'Grip', price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       return product.price * product.quantity;
+//     }
+//   }
+//   return 0;
+//   // Пиши код выше этой строки
+// }
+// console.log(calculateTotalPrice('Droid'));
+
+// ===========mod-3=====30/41==================
+
+// function makeTask(data) {
+//   // const completed = false;
+//   // const category = 'General';
+//   // const priority = 'Normal';
+//   // Change code below this line
+//   const { text: text, completed = false, category = 'General', priority = 'Normal' } = data;
+//   return { category, priority, ...data, completed };
+//   // Change code above this line
+// }
+// console.log(makeTask({ priority: 'Low', text: 'Choose shampoo' }));
+
+// ===========mod-3=====31/41==================
+
+//  решение 1
+// // Change code below this line
+// function add(...args) {
+//   let result = 0;
+//   for( let i = 0; i < args.length; i += 1){
+// result += args[i];
+//   }
+//   return result;
+//     // Change code above this line
+// }
+
+// решение 2
+
+// // Change code below this line
+// function add(...args) {
+//   let result = 0;
+//   for( let arg of args){
+// result += arg;
+//   }
+//   return result;
+//     // Change code above this line
+// }
+
+// ===========mod-3=====32/41==================
+
+// // Change code below this line
+// function addOverNum(...args) {
+//   let total = 0;
+
+//   for (const arg of args) {
+//     if( args[0] < arg){
+//     total += arg;
+//     }
+//   }
+
+//   return total;
+//   // Change code above this line
+// }
+
+// ===========mod-3=====33/41==================
+
+// Change code below this line
+function findMatches(...args) {
+  const matches = []; // Don't change this line
+  const firstArgs = args[0];
+  for (const arg of args) {
+    for (const firstArg of firstArgs) {
+      if (arg === firstArg) {
+        matches.push(arg);
+      }
     }
   }
-  return result;
+  // Change code above this line
+  return matches;
 }
-
-// Change code above this line
-
-console.log(getAllPropValues('price'));
+console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
