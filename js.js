@@ -319,64 +319,246 @@
 //   // Change code above this line
 // };
 
-// ============================================================
+// ===============================решение 41/41=============================
 
-const atTheOldToad = {
-  potions: [
-    { name: 'Speed potion', price: 460 },
-    { name: 'Dragon breath', price: 780 },
-    { name: 'Stone skin', price: 520 },
-  ],
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Speed potion', price: 460 },
+//     { name: 'Dragon breath', price: 780 },
+//     { name: 'Stone skin', price: 520 },
+//   ],
+//   // Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     for (const item of this.potions) {
+//       if (item.name === newPotion.name) {
+//         return `Error! Potion ${item.name} is already in your inventory!`;
+//       }
+//     }
+//     // const newProduct = {
+//     //   ...newPotion,
+//     // };
+
+//     this.potions.push(newPotion);
+//   },
+//   removePotion(potionName) {
+//     const { potions } = this;
+//     for (let i = 0; i < potions.length; i += 1) {
+//       const { name } = potions[i];
+//       if (potionName === name) {
+//         potions.splice(i, 1);
+//       }
+//     }
+//   },
+//   updatePotionName(oldName, newName) {
+//     for (let i = 0; i < this.potions.length; i += 1) {
+//       if (oldName === this.potions[i].name) {
+//         this.potions[i].name = newName;
+//         return;
+//       }
+//     }
+//     return `Potion ${oldName} is not in inventory!`;
+//   },
+//   // Change code above this line
+// };
+
+// console.table(atTheOldToad.getPotions()); // вращает [ { name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 } ]
+// console.table(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })); // в массиве potions последним элементом будет этот объект
+// console.log(atTheOldToad.addPotion({ name: 'Power potion', price: 270 })); // в массиве potions последним элементом будет этот объект
+// console.table(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion({ name: 'Dragon breath', price: 700 })); // массив potions не изменяется  и  возвращает строку "Error! Potion Dragon breath is already in your inventory!"
+// console.table(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion({ name: 'Stone skin', price: 240 })); // массив potions не изменяется и  возвращает строку "Error! Potion Dragon breath is already in your inventory!"
+// console.table(atTheOldToad.getPotions());
+// console.log(atTheOldToad.removePotion('Dragon breath')); // в свойстве potions будет массив [ { name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 } ]
+// console.table(atTheOldToad.getPotions());
+// console.log(atTheOldToad.removePotion('Speed potion')); // в свойстве potions будет массив [ { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// console.table(atTheOldToad.getPotions());
+// console.log(atTheOldToad.updatePotionName('Dragon breath', 'Polymorth')); // в свойстве potions будет массив [{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 } ]
+// console.table(atTheOldToad.getPotions());
+// console.log(atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion')); // в свойстве potions будет массив [{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 } ]
+// console.table(atTheOldToad.getPotions());
+
+//  ===========mod-4==========2/48==================
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+// console.log(makeMessage('Royal Grand', makePizza));
+// // возвращает строку "Pizza Royal Grand is being prepared, please wait..."
+// console.log(makeMessage('Ultracheese', deliverPizza));
+// // возвращает строку "Delivering Ultracheese pizza."
+
+//  ===========mod-4==========3/48==================
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza('Royal Grand', function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza('Ultracheese', function eatPizza(pizzaName) {
+//   console.log(`EatingPizza ${pizzaName}.`);
+// });
+
+//  ===========mod-4==========4/48==================
+
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (!this.pizzas.includes(pizzaName)) {
+//       return onError(pizzaName);
+//     }
+//     return onSuccess(pizzaName);
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! There is no pizza with a name ${error} in the assortment.`;
+// }
+
+// // Method calls with callbacks
+// pizzaPalace.order('Smoked', makePizza, onOrderError);
+// pizzaPalace.order('Four meats', makePizza, onOrderError);
+// pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace.order('Vienna', makePizza, onOrderError);
+
+// //==========================решение 2============================
+
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     for (const pizza of this.pizzas)
+//       if (pizza === pizzaName) {
+//         return onSuccess(pizzaName);
+//       }
+//     return onError(pizzaName);
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! There is no pizza with a name ${error} in the assortment.`;
+// }
+
+// // Method calls with callbacks
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+
+//  ===========mod-4==========5/48==================
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+
+//   // for (let i = 0; i < orderedItems.length; i += 1) {
+//   //   totalPrice += orderedItems[i];
+//   // }
+
+//   orderedItems.forEach(element => {
+//     totalPrice += element;
+//   });
+//   // Change code above this line
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4])); //138
+
+//  ===========mod-4==========6/48==================
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] > value) {
+//   //     filteredNumbers.push(numbers[i]);
+//   //   }
+//   // }
+//   numbers.forEach(number => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); //  возвращает  [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // возвращает  [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); //  возвращает  []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); //  возвращает  [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // возвращает [24, 41, 76]
+
+//  ===========mod-4==========7/48==================
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//   // for (let i = 0; i < firstArray.length; i += 1) {
+//   //   if (secondArray.includes(firstArray[i])) {
+//   //     commonElements.push(firstArray[i]);
+//   //   }
+//   // }
+//   firstArray.forEach(element => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+//   return commonElements;
+//   // Change code above this line
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4])); // возвращает [2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); //  возвращает [1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает [12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает [10, 30, 40]
+
+//  ===========mod-4==========13/48==================
+
+function changeEven(numbers, value) {
   // Change code below this line
-  getPotions() {
-    return this.potions;
-  },
-  addPotion(newPotion) {
-    for (const item of this.potions) {
-      if (item.name === newPotion.name) {
-        return `Error! Potion ${item.name} is already in your inventory!`;
-      }
+  const newNumbers = [];
+  numbers.forEach(number => {
+    if (number % 2 === 0) {
+      newNumbers.push(number + value);
     }
-    // const newProduct = {
-    //   ...newPotion,
-    // };
+  });
+  return newNumbers;
 
-    this.potions.push(newPotion);
-  },
-  removePotion(potionName) {
-    const { potions } = this;
-    for (let i = 0; i < potions.length; i += 1) {
-      const { name } = potions[i];
-      if (potionName === name) {
-        potions.splice(i, 1);
-      }
-    }
-  },
-  updatePotionName(oldName, newName) {
-    for (let i = 0; i < this.potions.length; i += 1) {
-      if (oldName === this.potions[i].name) {
-        this.potions[i].name = newName;
-        return;
-      }
-    }
-    return `Potion ${oldName} is not in inventory!`;
-  },
   // Change code above this line
-};
-
-console.table(atTheOldToad.getPotions()); // вращает [ { name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 } ]
-console.table(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })); // в массиве potions последним элементом будет этот объект
-console.log(atTheOldToad.addPotion({ name: 'Power potion', price: 270 })); // в массиве potions последним элементом будет этот объект
-console.table(atTheOldToad.getPotions());
-console.log(atTheOldToad.addPotion({ name: 'Dragon breath', price: 700 })); // массив potions не изменяется  и  возвращает строку "Error! Potion Dragon breath is already in your inventory!"
-console.table(atTheOldToad.getPotions());
-console.log(atTheOldToad.addPotion({ name: 'Stone skin', price: 240 })); // массив potions не изменяется и  возвращает строку "Error! Potion Dragon breath is already in your inventory!"
-console.table(atTheOldToad.getPotions());
-console.log(atTheOldToad.removePotion('Dragon breath')); // в свойстве potions будет массив [ { name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 } ]
-console.table(atTheOldToad.getPotions());
-console.log(atTheOldToad.removePotion('Speed potion')); // в свойстве potions будет массив [ { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
-console.table(atTheOldToad.getPotions());
-console.log(atTheOldToad.updatePotionName('Dragon breath', 'Polymorth')); // в свойстве potions будет массив [{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 } ]
-console.table(atTheOldToad.getPotions());
-console.log(atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion')); // в свойстве potions будет массив [{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 } ]
-console.table(atTheOldToad.getPotions());
+}
+console.log(changeEven([1, 2, 3, 4, 5], 10)); // возвращает новый массив [1, 12, 3, 14, 5]
+console.log(changeEven([2, 8, 3, 7, 4, 6], 10)); // возвращает новый массив [12, 18, 3, 7, 14, 16]
+console.log(changeEven([17, 24, 68, 31, 42], 100)); // возвращает новый массив [17, 124, 168, 31, 142]
+console.log(changeEven([44, 13, 81, 92, 36, 54], 100)); // возвращает новый массив [144, 13, 81, 192, 136, 154]
