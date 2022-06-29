@@ -546,19 +546,54 @@
 
 //  ===========mod-4==========13/48==================
 
-function changeEven(numbers, value) {
-  // Change code below this line
-  const newNumbers = [];
-  numbers.forEach(number => {
-    if (number % 2 === 0) {
-      newNumbers.push(number + value);
-    }
-  });
-  return newNumbers;
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   const newNumbers = [];
+//   numbers.forEach(number => {
+//     if (number % 2 === 0) {
+//       newNumbers.push(number + value);
+//     }
+//     if (number % 2 !== 0) {
+//       newNumbers.push(number);
+//     }
+//   });
+//   return newNumbers;
 
-  // Change code above this line
-}
-console.log(changeEven([1, 2, 3, 4, 5], 10)); // возвращает новый массив [1, 12, 3, 14, 5]
-console.log(changeEven([2, 8, 3, 7, 4, 6], 10)); // возвращает новый массив [12, 18, 3, 7, 14, 16]
-console.log(changeEven([17, 24, 68, 31, 42], 100)); // возвращает новый массив [17, 124, 168, 31, 142]
-console.log(changeEven([44, 13, 81, 92, 36, 54], 100)); // возвращает новый массив [144, 13, 81, 192, 136, 154]
+//   // Change code above this line
+// }
+// // Change code above this line
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10)); // возвращает новый массив [1, 12, 3, 14, 5]
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10)); // возвращает новый массив [12, 18, 3, 7, 14, 16]
+// console.log(changeEven([17, 24, 68, 31, 42], 100)); // возвращает новый массив [17, 124, 168, 31, 142]
+// console.log(changeEven([44, 13, 81, 92, 36, 54], 100)); // возвращает новый массив [144, 13, 81, 192, 136, 154]
+
+//  ===========mod-4==========14/48==================
+
+// const planets = ['Earth', 'Mars', 'Venus', 'Jupiter'];
+// // Change code below this line
+// const planetsLengths = planets.map(planet => planet.length);
+// console.log(planetsLengths);
+
+//  ===========mod-4==========20/48==================
+
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    genres: ['adventure', 'history'],
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    genres: ['fiction', 'mysticism'],
+  },
+  {
+    title: 'Redder Than Blood',
+    author: 'Tanith Lee',
+    genres: ['horror', 'mysticism', 'adventure'],
+  },
+];
+// Change code below this line
+const allGenres = books.flatMap(book => book.genres);
+const uniqueGenres = allGenres.filter((genre, index, array) => array.indexOf(genre) === index);
