@@ -575,25 +575,62 @@
 // const planetsLengths = planets.map(planet => planet.length);
 // console.log(planetsLengths);
 
-//  ===========mod-4==========20/48==================
+//  ===========mod-4==========22/48==================
+
+// // Change code below this line
+// const getUsersWithEyeColor = (users, color) => {
+//   const filterColor = users.filter(user => user.eyeColor === color);
+//   return filterColor;
+// };
+
+// // Change code above this line
+
+//  ===========mod-4==========35/48==================
+
+// const players = [
+//   { name: 'Mango', playtime: 1270, gamesPlayed: 4 },
+//   { name: 'Poly', playtime: 469, gamesPlayed: 2 },
+//   { name: 'Ajax', playtime: 690, gamesPlayed: 3 },
+//   { name: 'Kiwi', playtime: 241, gamesPlayed: 1 },
+// ];
+// // Change code below this line
+
+// const totalAveragePlaytimePerGame = players.reduce(
+//   (total, player) => total + player.playtime / player.gamesPlayed,
+//   0
+// );
+// console.log(totalAveragePlaytimePerGame);
+
+//  ===========mod-4==========45/48==================
 
 const books = [
   {
     title: 'The Last Kingdom',
     author: 'Bernard Cornwell',
-    genres: ['adventure', 'history'],
+    rating: 8.38,
   },
   {
     title: 'Beside Still Waters',
     author: 'Robert Sheckley',
-    genres: ['fiction', 'mysticism'],
+    rating: 8.51,
   },
   {
-    title: 'Redder Than Blood',
-    author: 'Tanith Lee',
-    genres: ['horror', 'mysticism', 'adventure'],
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Dreams in the Witch House',
+    author: 'Howard Lovecraft',
+    rating: 8.67,
   },
 ];
+const MIN_BOOK_RATING = 8;
 // Change code below this line
-const allGenres = books.flatMap(book => book.genres);
-const uniqueGenres = allGenres.filter((genre, index, array) => array.indexOf(genre) === index);
+
+const names = books
+  .filter(book => book.rating > MIN_BOOK_RATING)
+  .map(book => book.author)
+  .sort((a, b) => a.localeCompare(b));
+console.log(names);
